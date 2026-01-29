@@ -1,0 +1,7 @@
+these docs are just better documentation, tutorials, and examples then REFRENCE.txt, start from starting-out folder and follow the order bellow:
+1. starting-out
+2. logic-and-arithmatic
+3. memory-management
+4. advanced-ops
+5. 16bit-ops
+6. final-things

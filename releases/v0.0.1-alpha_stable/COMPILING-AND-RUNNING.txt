@@ -1,0 +1,20 @@
+
+Compiling and Running
+---------------------
+To compile:
+gcc -std=c99 -Wall -Wextra -O2 -o shredder shredder.c
+
+To run a program:
+./shredder program.shred
+
+Optional flags:
+-d, --debug    : Enable debug output
+-t, --trace    : Verbose instruction trace
+-m START:END   : Dump memory from START to END after execution (hex)
+
+Use Cases
+---------
+- Educational exercises in low-level computation
+- Testing self-modifying code
+- Learning stack-based programming and arithmetic logic
+- Small experimental programs with hexadecimal instruction sets

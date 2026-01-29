@@ -1,0 +1,2 @@
+Development is actively being worked on v0.0.2-alpha, it doesnt have documentation so please use the stable release v0.0.1-alpha!!
+For the record once documentation on v0.0.1-alpha is done i will begin doing stuff for v0.0.2-alpha, i will not archive v0.0.1-alpha or any old versions following development.

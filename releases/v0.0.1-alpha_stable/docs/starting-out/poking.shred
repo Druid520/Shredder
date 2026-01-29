@@ -1,0 +1,32 @@
+;shred examples
+;please read refrence, readme, check the source code, and check the compiling and running guide before developing and learning
+;THEY ARE EXTREMELY IMPORTANT
+
+;basic poke function
+01 50 48
+;01 is poke, writes to memtable, then 50 is the addr, and 48 is the hex to write
+;eg H for 48, so this writes/pokes 48 to the addr 50 in the mem table.
+01 51 65
+01 52 6C
+01 53 6C
+01 54 6F
+08 ;this is halt, it ends the program, simple enough.
+;this writes the rest of "Hello" to the mem table, if ran with the -d option in the memtable/dump it should outputas yo
+;0000: 01 50 48 01 51 65 01 52 6C 01 53 6C 01 54 6F 08
+;0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+;0020: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+;0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+;0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+;0050: 48 65 6C 6C 6F 00 00 00 00 00 00 00 00 00 00 00
+;0060: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+;0070: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+;0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+;0090: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+;00A0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+;00B0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+;00C0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+;00D0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+;00E0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+;00F0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+;as you can see in 0050, in the first slots, 50, 51, 52, 53, 54, it writes the hexadecimal ascii values for "Hello"
+;this is a simple program to poke "Hello" to memory, try and finish it to say " World!" in 0060

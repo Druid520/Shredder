@@ -1,0 +1,10 @@
+;now we will learn about the ops PUTC, PUTN and GETC.
+;these are how you print, log, and get inputs
+;PUTC prints ascii from a memory address and is defined as 10
+;PUTN prints decimal from a memory address and is defined as 11
+;GETC gets user input and assigns to a memory address and is defined as 12
+12 F0 ;asks for user input and assigns input to address F0
+10 F0 ;prints hex from F0 translated to ascii
+08 ;halts program
+;so for example if i input ! it pokes to address, the it prints that with PUTC, then halts
+;PUTC stands for put character, PUTN stands for put number, GETC stands for get character.

@@ -1,0 +1,4 @@
+use online hex tools! they are super useful!
+THIS WHOLE LANGUAGE IS HEX, THERE IS NO BOOLEAN!!!
+Read ALL of COMPILING-AND-RUNNING.txt, README.md, and it is MANDITORY to read REFRENCE.txt to even try out the lang.
+Then move on to the stuff in docs and start learning the lang.

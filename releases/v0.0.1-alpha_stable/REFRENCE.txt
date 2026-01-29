@@ -1,0 +1,196 @@
+Shredder/SHVM - Reference
+=======================
+
+ASCII Table
+-------
+HEX   CHAR
+20    (space)
+21    !
+22    "
+23    #
+24    $
+25    %
+26    &
+27    '
+28    (
+29    )
+2A    *
+2B    +
+2C    ,
+2D    -
+2E    .
+2F    /
+30    0
+31    1
+32    2
+33    3
+34    4
+35    5
+36    6
+37    7
+38    8
+39    9
+3A    :
+3B    ;
+3C    <
+3D    =
+3E    >
+3F    ?
+40    @
+41    A
+42    B
+43    C
+44    D
+45    E
+46    F
+47    G
+48    H
+49    I
+4A    J
+4B    K
+4C    L
+4D    M
+4E    N
+4F    O
+50    P
+51    Q
+52    R
+53    S
+54    T
+55    U
+56    V
+57    W
+58    X
+59    Y
+5A    Z
+5B    [
+5C    \
+5D    ]
+5E    ^
+5F    _
+60    `
+61    a
+62    b
+63    c
+64    d
+65    e
+66    f
+67    g
+68    h
+69    i
+6A    j
+6B    k
+6C    l
+6D    m
+6E    n
+6F    o
+70    p
+71    q
+72    r
+73    s
+74    t
+75    u
+76    v
+77    w
+78    x
+79    y
+7A    z
+7B    {
+7C    |
+7D    }
+7E    ~
+7F    DEL
+
+Numbers
+-------
+
+Dec	Hex	Dec	Hex	Dec	Hex	Dec	Hex	Dec	Hex	Dec	Hex	Dec	Hex	Dec	Hex
+0	00	32	20	64	40	96	60	128	80	160	A0	192	C0	224	E0
+1	01	33	21	65	41	97	61	129	81	161	A1	193	C1	225	E1
+2	02	34	22	66	42	98	62	130	82	162	A2	194	C2	226	E2
+3	03	35	23	67	43	99	63	131	83	163	A3	195	C3	227	E3
+4	04	36	24	68	44	100	64	132	84	164	A4	196	C4	228	E4
+5	05	37	25	69	45	101	65	133	85	165	A5	197	C5	229	E5
+6	06	38	26	70	46	102	66	134	86	166	A6	198	C6	230	E6
+7	07	39	27	71	47	103	67	135	87	167	A7	199	C7	231	E7
+8	08	40	28	72	48	104	68	136	88	168	A8	200	C8	232	E8
+9	09	41	29	73	49	105	69	137	89	169	A9	201	C9	233	E9
+10	0A	42	2A	74	4A	106	6A	138	8A	170	AA	202	CA	234	EA
+11	0B	43	2B	75	4B	107	6B	139	8B	171	AB	203	CB	235	EB
+12	0C	44	2C	76	4C	108	6C	140	8C	172	AC	204	CC	236	EC
+13	0D	45	2D	77	4D	109	6D	141	8D	173	AD	205	CD	237	ED
+14	0E	46	2E	78	4E	110	6E	142	8E	174	AE	206	CE	238	EE
+15	0F	47	2F	79	4F	111	6F	143	8F	175	AF	207	CF	239	EF
+16	10	48	30	80	50	112	70	144	90	176	B0	208	D0	240	F0
+17	11	49	31	81	51	113	71	145	91	177	B1	209	D1	241	F1
+18	12	50	32	82	52	114	72	146	92	178	B2	210	D2	242	F2
+19	13	51	33	83	53	115	73	147	93	179	B3	211	D3	243	F3
+20	14	52	34	84	54	116	74	148	94	180	B4	212	D4	244	F4
+21	15	53	35	85	55	117	75	149	95	181	B5	213	D5	245	F5
+22	16	54	36	86	56	118	76	150	96	182	B6	214	D6	246	F6
+23	17	55	37	87	57	119	77	151	97	183	B7	215	D7	247	F7
+24	18	56	38	88	58	120	78	152	98	184	B8	216	D8	248	F8
+25	19	57	39	89	59	121	79	153	99	185	B9	217	D9	249	F9
+26	1A	58	3A	90	5A	122	7A	154	9A	186	BA	218	DA	250	FA
+27	1B	59	3B	91	5B	123	7B	155	9B	187	BB	219	DB	251	FB
+28	1C	60	3C	92	5C	124	7C	156	9C	188	BC	220	DC	252	FC
+29	1D	61	3D	93	5D	125	7D	157	9D	188	BD	221	DD	253	FD
+30	1E	62	3E	94	5E	126	7E	158	9E	190	BE	222	DE	254	FE
+31	1F	63	3F	95	5F	127	7F	159	9F	191	BF	223	DF	255	FF
+
+Opcodes
+-------
+0x00  NOP       - No operation
+0x01  POKE      - POKE [addr] <- value
+0x02  MOVE      - MOVE [src] -> [dest]
+0x03  NOT       - NOT [addr]
+0x04  NAND      - NAND [a] [b] -> [dest]
+0x05  JMP       - Jump to [addr]
+0x06  JZ        - Jump to [addr] if [cond]==0
+0x07  RUN       - Push return address; jump to [addr]
+0x08  HALT      - Stop execution / return if stack
+0x09  AND       - AND [a] [b] -> [dest]
+0x0A  OR        - OR [a] [b] -> [dest]
+0x0B  XOR       - XOR [a] [b] -> [dest]
+0x0C  INC       - Increment [addr]
+0x0D  DEC       - Decrement [addr]
+0x0E  CMP       - Compare [a] [b] -> [dest] (1 if equal, else 0)
+0x0F  COMMENT   - Skip [len] bytes
+
+I/O Opcodes
+-------
+0x10  PUTC      - Output character from [addr]
+0x11  PUTN      - Output decimal number from [addr]
+0x12  GETC      - Input character -> [addr]
+0x13  RET       - Return from RUN / RUN16
+
+Arithmetic & Shifts
+-------
+0x14  ADD       - [a] + [b] -> [dest]; sets overflow_flag
+0x15  SUB       - [a] - [b] -> [dest]; sets overflow_flag
+0x16  MUL       - [a] * [b] -> [dest]; sets overflow_flag
+0x17  DIV       - [a] / [b] -> [dest]
+0x18  SHL       - [a] << ([b] & 0x07) -> [dest]
+0x19  SHR       - [a] >> ([b] & 0x07) -> [dest]
+
+16-bit Addressing Opcodes
+-------
+0x1A  POKE16    - POKE16 [addr16] <- value
+0x1B  MOVE16    - MOVE16 [src16] -> [dest16]
+0x1C  JMP16     - Jump to [addr16]
+0x1D  JZ16      - Jump to [addr16] if [cond]==0
+0x1E  RUN16     - Push return; jump to [addr16]
+
+Memory & Stack
+-------
+Memory: 64K unified memory (0x0000–0xFFFF)
+Stack:  64-level call stack storing 16-bit return addresses
+Overflow Flag: Set when arithmetic operations exceed 8-bit limits
+Instruction Limit: 1,000,000 instructions max (prevents infinite loops)
+
+Execution Notes
+-------
+- Self-modifying code is allowed since memory is unified.
+- Instruction operands are bounds-checked to avoid memory faults.
+- Debug and trace modes can help trace instruction execution.
+- Comments are skipped by loader; both ';' and '#' are supported.

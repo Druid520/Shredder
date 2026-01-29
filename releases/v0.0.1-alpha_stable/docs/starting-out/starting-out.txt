@@ -1,0 +1,26 @@
+the HALT function, 08 is how you end the program, everything else has to be before halt, for example:
+00 ;No operation
+08 ;halts the program
+This would do nothing then end
+This is what not to do:
+00 ;No operation but also no halt
+This gives error; CPU Fault: IP 0x10000 out of bounds
+Another thing to not do is:
+00 ;No op
+08 ;Halts
+00 ;Op after halt
+This will infact run but the NOP (00) after halt will not execute, same with anything else after halt.
+
+the POKE function, 01 is when you write something to the memory table,
+you need 01 (the poke op), then {addr} eg F0 or 51, then the {data} to write eg 21 which is a "!" in ascii.
+for example to poke "!" to memory location 34 it would be:
+01 34 21 ;pokes 21 to memory
+08 ;halts the program
+
+the NOP function is 00, it is no operation, its mostly used for padding, for example:
+01 34 21 ;pokes 21 aka "!" to memory address 34
+00 ;no operation, more for padding, not used often
+01 35 21 ;pokes 21 again to memory address 35
+08 ;halts the program
+
+Now that you know these check out poke.shred and REFRENCE.txt and try making your own program!

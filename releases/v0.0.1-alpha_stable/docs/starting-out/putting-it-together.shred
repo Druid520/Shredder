@@ -1,0 +1,16 @@
+;in this program we will put together GETC, POKE, HALT, NOP, and PUTC together
+01 F0 48 ;pokes H to F0
+01 F1 65 ;pokes e to F1
+01 F2 6C ;pokes l to F2
+01 F3 6C ;pokes l to F3
+01 F4 6F ;pokes o to F4
+12 F5 ;asks for user input and pokes to F5, for example you could input !, ?, ., ...
+00 ;gives program a break, unnecessary for this but a good padding example
+10 F0 ;prints F0
+10 F1 ;prints F1
+10 F2 ;prints F2
+10 F3 ;prints F3
+10 F4 ;prints F4
+10 F5 ;prints user input aka F5
+08 ;halts program
+;this program sets a string of H, e, l, l, o or Hello then asks for user input (intended to be punctionation) then finally prints Hello+F5 aka Hello+user input
