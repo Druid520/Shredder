@@ -5,3 +5,5 @@ these docs are just better documentation, tutorials, and examples then REFRENCE.
 4. advanced-ops
 5. 16bit-ops
 6. final-things
+
+also check out advanced-processes for tutorials on self modifing code, for, if/else/else if, and more advanced combinations of stuff
